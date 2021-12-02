@@ -13,10 +13,15 @@
 		463A272127592B0D000304D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463A271F27592B0D000304D0 /* Main.storyboard */; };
 		463A272327592B0E000304D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463A272227592B0E000304D0 /* Assets.xcassets */; };
 		463A272627592B0E000304D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463A272427592B0E000304D0 /* LaunchScreen.storyboard */; };
+		463A273A27592B9F000304D0 /* BSBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A273927592B9F000304D0 /* BSBuilder.swift */; };
+		463A274B27592D69000304D0 /* BSTabBarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A274727592D69000304D0 /* BSTabBarItemCell.swift */; };
+		463A274C27592D69000304D0 /* BSTabBarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A274827592D69000304D0 /* BSTabBarFlowLayout.swift */; };
+		463A274D27592D69000304D0 /* BSTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A274927592D69000304D0 /* BSTabBar.swift */; };
+		463A274E27592D69000304D0 /* BSTabBarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A274A27592D69000304D0 /* BSTabBarConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		463A271627592B0D000304D0 /* BSTabBAr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSTabBAr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		463A271627592B0D000304D0 /* BSTabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSTabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		463A271927592B0D000304D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		463A271B27592B0D000304D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		463A271D27592B0D000304D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,11 @@
 		463A272227592B0E000304D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		463A272527592B0E000304D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		463A272727592B0E000304D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		463A273927592B9F000304D0 /* BSBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSBuilder.swift; sourceTree = "<group>"; };
+		463A274727592D69000304D0 /* BSTabBarItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSTabBarItemCell.swift; sourceTree = "<group>"; };
+		463A274827592D69000304D0 /* BSTabBarFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSTabBarFlowLayout.swift; sourceTree = "<group>"; };
+		463A274927592D69000304D0 /* BSTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSTabBar.swift; sourceTree = "<group>"; };
+		463A274A27592D69000304D0 /* BSTabBarConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSTabBarConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +50,7 @@
 		463A270D27592B0D000304D0 = {
 			isa = PBXGroup;
 			children = (
-				463A271827592B0D000304D0 /* BSTabBAr */,
+				463A271827592B0D000304D0 /* BSTabBar */,
 				463A271727592B0D000304D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,14 +58,15 @@
 		463A271727592B0D000304D0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				463A271627592B0D000304D0 /* BSTabBAr.app */,
+				463A271627592B0D000304D0 /* BSTabBar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		463A271827592B0D000304D0 /* BSTabBAr */ = {
+		463A271827592B0D000304D0 /* BSTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				463A272E27592B25000304D0 /* Source */,
 				463A271927592B0D000304D0 /* AppDelegate.swift */,
 				463A271B27592B0D000304D0 /* SceneDelegate.swift */,
 				463A271D27592B0D000304D0 /* ViewController.swift */,
@@ -64,15 +75,27 @@
 				463A272427592B0E000304D0 /* LaunchScreen.storyboard */,
 				463A272727592B0E000304D0 /* Info.plist */,
 			);
-			path = BSTabBAr;
+			path = BSTabBar;
+			sourceTree = "<group>";
+		};
+		463A272E27592B25000304D0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				463A274927592D69000304D0 /* BSTabBar.swift */,
+				463A274A27592D69000304D0 /* BSTabBarConfiguration.swift */,
+				463A274827592D69000304D0 /* BSTabBarFlowLayout.swift */,
+				463A274727592D69000304D0 /* BSTabBarItemCell.swift */,
+				463A273927592B9F000304D0 /* BSBuilder.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		463A271527592B0D000304D0 /* BSTabBAr */ = {
+		463A271527592B0D000304D0 /* BSTabBar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 463A272A27592B0E000304D0 /* Build configuration list for PBXNativeTarget "BSTabBAr" */;
+			buildConfigurationList = 463A272A27592B0E000304D0 /* Build configuration list for PBXNativeTarget "BSTabBar" */;
 			buildPhases = (
 				463A271227592B0D000304D0 /* Sources */,
 				463A271327592B0D000304D0 /* Frameworks */,
@@ -82,9 +105,9 @@
 			);
 			dependencies = (
 			);
-			name = BSTabBAr;
+			name = BSTabBar;
 			productName = BSTabBAr;
-			productReference = 463A271627592B0D000304D0 /* BSTabBAr.app */;
+			productReference = 463A271627592B0D000304D0 /* BSTabBar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +124,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 463A271127592B0D000304D0 /* Build configuration list for PBXProject "BSTabBAr" */;
+			buildConfigurationList = 463A271127592B0D000304D0 /* Build configuration list for PBXProject "BSTabBar" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,7 +137,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				463A271527592B0D000304D0 /* BSTabBAr */,
+				463A271527592B0D000304D0 /* BSTabBar */,
 			);
 		};
 /* End PBXProject section */
@@ -139,7 +162,12 @@
 			files = (
 				463A271E27592B0D000304D0 /* ViewController.swift in Sources */,
 				463A271A27592B0D000304D0 /* AppDelegate.swift in Sources */,
+				463A274D27592D69000304D0 /* BSTabBar.swift in Sources */,
+				463A274C27592D69000304D0 /* BSTabBarFlowLayout.swift in Sources */,
 				463A271C27592B0D000304D0 /* SceneDelegate.swift in Sources */,
+				463A274B27592D69000304D0 /* BSTabBarItemCell.swift in Sources */,
+				463A273A27592B9F000304D0 /* BSBuilder.swift in Sources */,
+				463A274E27592D69000304D0 /* BSTabBarConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +321,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = YCStudio.com.BSTabBAr;
+				PRODUCT_BUNDLE_IDENTIFIER = YCStudio.com.BSTabBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,7 +340,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = YCStudio.com.BSTabBAr;
+				PRODUCT_BUNDLE_IDENTIFIER = YCStudio.com.BSTabBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		463A271127592B0D000304D0 /* Build configuration list for PBXProject "BSTabBAr" */ = {
+		463A271127592B0D000304D0 /* Build configuration list for PBXProject "BSTabBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				463A272827592B0E000304D0 /* Debug */,
@@ -331,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		463A272A27592B0E000304D0 /* Build configuration list for PBXNativeTarget "BSTabBAr" */ = {
+		463A272A27592B0E000304D0 /* Build configuration list for PBXNativeTarget "BSTabBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				463A272B27592B0E000304D0 /* Debug */,
