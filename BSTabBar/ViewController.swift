@@ -13,7 +13,12 @@ class ViewController: UIViewController {
 		.init(tabTitle: "Item1"),
 		.init(tabTitle: "Item2WithLongTitle"),
 		.init(tabIcon: self.img, tabTitle: "Item3"),
-		.init(tabIcon: self.img, tabTitle: "4")
+		.init(tabIcon: self.img, tabTitle: "4"),
+        .init(tabIcon: self.img, tabTitle: "Item5"),
+        .init(tabIcon: self.img, tabTitle: "Item6"),
+        .init(tabIcon: self.img, tabTitle: "Item7"),
+        .init(tabIcon: self.img, tabTitle: "Item8"),
+        .init(tabIcon: self.img, tabTitle: "Item9"),
 	]
 
 	@IBOutlet weak var tabBar: BSTabBar!
@@ -22,8 +27,12 @@ class ViewController: UIViewController {
 		tabBar.builder
 			.setTabItems(items)
 			.scrollable(isScrollable: true, isPaging: true)
-			.setConfig(.init(tabBarBackgroundColor: .white, tabBarArrangedDirection: .horizontal))
-			.build()
+			.setConfig(
+                .init(
+                    tabBarBackgroundColor: .white,
+                    tabBarArrangedDirection: .horizontal,
+                    defaultSelectPage: 7))
+            .build()
 	}
 }
 

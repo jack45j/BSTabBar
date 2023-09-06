@@ -30,6 +30,8 @@ extension BSBuilder where T: BSTabBar {
     @discardableResult
     func build() -> T {
         _build().tabBarItemCollectionView.collectionViewLayout.invalidateLayout()
+        _build().tabBarItemCollectionView.reloadData()
+        _build().selectTab(item: _build().config.defaultSelectPage)
         return _build()
     }
 }

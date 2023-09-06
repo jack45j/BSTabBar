@@ -54,45 +54,19 @@ final class BSTabBarFlowLayout: UICollectionViewFlowLayout {
 //        cachedAttributes.removeAll()
         contentBounds = .zero
         
-        if #available(iOS 13.0, *) { } else {
-            let cachedWidths: [CGFloat] = .init(repeating: calItemSize().width, count: cv.numberOfItems(inSection: 0))
-            contentBounds = .init(x: 0, y: 0, width: cachedWidths.reduce(0, +), height: cv.frame.height)
-            for idx in 0..<cv.numberOfItems(inSection: 0) {
-                let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: idx, section: 0))
-                attributes.frame = .init(x: idx == 0 ? 0 : cachedWidths[0..<idx].reduce(0, +),
-                                         y: 0,
-                                         width: calItemSize().width,
-                                         height: cv.frame.height)
-                cachedAttributes.append(attributes)
-            }
-
-            tabBar?.updateHorizontalBar()
-            return
-        }
-        
-        // For every item in the collection view:
-        //  - Prepare the attributes.
-        //  - Store attributes in the cachedAttributes array.
-        //  - Union contentBounds with attributes.frame.
-        var currentIndex = 0
-
-        let count = cv.numberOfItems(inSection: 0)
-        
-        while currentIndex < count {
-            var cellWidth = calItemSize().width
-            var cellFrame = CGRect.zero
-            if cachedAttributes.count > currentIndex {
-                cellWidth = cachedAttributes[currentIndex].frame.size.width
-            }
-            cellFrame = CGRect(x: contentBounds.width, y: contentBounds.minY, width: cellWidth, height: cv.bounds.height)
-            contentBounds = contentBounds.union(cellFrame)
-            let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: currentIndex, section: 0))
-            attributes.frame = cellFrame
+        let cachedWidths: [CGFloat] = .init(repeating: calItemSize().width, count: cv.numberOfItems(inSection: 0))
+        contentBounds = .init(x: 0, y: 0, width: cachedWidths.reduce(0, +), height: cv.frame.height)
+        for idx in 0..<cv.numberOfItems(inSection: 0) {
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: idx, section: 0))
+            attributes.frame = .init(x: idx == 0 ? 0 : cachedWidths[0..<idx].reduce(0, +),
+                                     y: 0,
+                                     width: calItemSize().width,
+                                     height: cv.frame.height)
             cachedAttributes.append(attributes)
-            currentIndex += 1
         }
-        
+
         tabBar?.updateHorizontalBar()
+        return
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
